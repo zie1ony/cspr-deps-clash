@@ -1,0 +1,13 @@
+[package]
+name = "deps-test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+casper-execution-engine = { version = "7.0.1", optional = true }
+casper-execution-engine-condor = { package = "casper-execution-engine", git = "https://github.com/casper-network/casper-node.git", branch = "feat-2.0", optional = true }
+
+[features]
+default = []
+old = ["casper-execution-engine"]
+condor = ["casper-execution-engine-condor"]
